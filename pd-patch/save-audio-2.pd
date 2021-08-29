@@ -1,0 +1,132 @@
+#N canvas 203 105 1514 773 10;
+#X obj 691 294 cnv 15 414 115 empty can_rcv save-audio 37 8 0 14 #d8fcfc
+#404040 0;
+#X msg 593 495 start;
+#X msg 662 495 stop;
+#X obj 546 610 inlet~;
+#X msg 108 133 open -bytes 4 signal_r.wav;
+#X obj 646 543 print done writing.;
+#X obj 593 610 writesf~ 2;
+#X obj 662 464 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 662 394 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 732 348 16 0 0 2 delay-time-in-min - -, f 16;
+#X obj 976 344 bng 25 250 50 0 empty empty start 0 -8 0 10 #fcfcfc
+#000000 #000000;
+#X obj 593 432 delay 100;
+#X obj 593 464 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 593 394 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 304 211 981 788 file-name 0;
+#X obj 443 15 inlet bang;
+#X obj 508 537 outlet bang;
+#X obj 480 145 date, f 16;
+#X obj 589 148 time;
+#X floatatom 599 185 5 0 0 0 - - -, f 5;
+#X floatatom 635 185 5 0 0 0 - - -, f 5;
+#X obj 508 468 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 508 499 open -bytes 4 daily-temp_8_13_1_25.wav;
+#X floatatom 507 185 5 0 0 0 - - -, f 5;
+#X floatatom 547 185 5 0 0 0 - - -, f 5;
+#X symbolatom 508 395 30 0 0 0 - - -, f 30;
+#X msg 508 428 set open -bytes 4 \$1;
+#X symbolatom 684 192 10 0 0 0 - - -, f 10;
+#X obj 508 348 l2s;
+#X obj 508 370 makefilename %s.wav;
+#X obj 685 167 inlet symbol;
+#X obj 443 41 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 443 122 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 521 287 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X symbolatom 632 339 10 0 0 0 - - -, f 10;
+#X msg 632 314 symbol _;
+#X msg 508 316 daily-temp 8 13 1 25;
+#X obj 694 319 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 513 79 t b b;
+#X obj 501 220 pack f f f f s, f 31;
+#X obj 491 113 t b b b;
+#X msg 506 251 set \$5 \$1 \$2 \$3 \$4;
+#X obj 443 77 delay 100;
+#X connect 0 0 16 0;
+#X connect 0 0 23 0;
+#X connect 0 0 27 0;
+#X connect 2 1 8 0;
+#X connect 2 1 24 0;
+#X connect 2 2 9 0;
+#X connect 2 2 24 1;
+#X connect 3 0 4 0;
+#X connect 3 0 24 2;
+#X connect 3 1 5 0;
+#X connect 3 1 24 3;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 11 0 6 0;
+#X connect 12 0 24 4;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X connect 15 0 12 0;
+#X connect 18 0 21 0;
+#X connect 19 0 13 1;
+#X connect 20 0 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 13 0;
+#X connect 23 1 20 0;
+#X connect 24 0 26 0;
+#X connect 25 0 2 0;
+#X connect 25 1 3 0;
+#X connect 25 2 24 0;
+#X connect 26 0 21 0;
+#X connect 26 0 18 0;
+#X connect 27 0 17 0;
+#X connect 27 0 25 0;
+#X restore 396 502 pd file-name;
+#N canvas 0 234 450 300 cnv-col 0;
+#X obj 196 195 s can_rcv;
+#X msg 196 161 color \$1;
+#X floatatom 196 121 5 0 0 0 - - -, f 5;
+#X msg 251 117 7;
+#X obj 252 88 loadbang;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X restore 107 107 pd cnv-col;
+#X obj 395 543 print open;
+#X obj 496 543 print starts;
+#X symbolatom 838 348 21 0 0 2 file-name - -, f 21;
+#X obj 662 432 delay 100;
+#X obj 731 394 * 60000;
+#X obj 1019 344 bng 25 250 50 0 empty empty stop 0 -8 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1040 253 inlet;
+#X connect 1 0 6 0;
+#X connect 1 0 8 0;
+#X connect 1 0 17 0;
+#X connect 2 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 3 0 6 1;
+#X connect 7 0 2 0;
+#X connect 8 0 19 0;
+#X connect 9 0 20 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;
+#X connect 13 0 11 0;
+#X connect 14 0 6 0;
+#X connect 14 0 13 0;
+#X connect 14 0 16 0;
+#X connect 18 0 14 1;
+#X connect 19 0 7 0;
+#X connect 20 0 19 1;
+#X connect 21 0 2 0;
+#X connect 22 0 21 0;
+#X coords 0 -1 1 1 337 69 1 716 317;
