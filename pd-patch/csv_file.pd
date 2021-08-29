@@ -1,0 +1,41 @@
+#N canvas -1448 -8 1458 822 10;
+#X declare -lib mrpeach;
+#X obj 3 334 outlet;
+#X obj 3 18 inlet;
+#X obj 82 311 outlet;
+#X obj 141 310 outlet;
+#X obj 29 151 s \$0-reset;
+#X obj 36 183 r \$0-done;
+#X obj 3 207 until;
+#X obj 3 130 t b b;
+#X obj 132 146 t a;
+#X text 1 380 danomatika.com | robotcowboy.com;
+#X text 2 365 2011 Dan Wilcox GPL v3;
+#X text 2 395 https://github.com/danomatika/rc-patches;
+#X obj 3 59 route bang;
+#X obj 3 305 csv_parse;
+#X obj 136 176 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 96 85 bng 15 250 50 0 empty empty rejected-item -1 -7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 8 95 bng 15 250 50 0 empty empty bang-received 0 21 0 10 #fcfcfc
+#000000 #000000;
+#X obj 3 420 declare -lib mrpeach;
+#X obj 3 244 binfile;
+#X connect 1 0 12 0;
+#X connect 5 0 6 1;
+#X connect 6 0 18 0;
+#X connect 7 0 6 0;
+#X connect 7 1 4 0;
+#X connect 8 0 14 0;
+#X connect 8 0 18 0;
+#X connect 12 0 7 0;
+#X connect 12 0 16 0;
+#X connect 12 1 8 0;
+#X connect 12 1 15 0;
+#X connect 13 0 0 0;
+#X connect 13 1 6 1;
+#X connect 18 0 13 0;
+#X connect 18 1 2 0;
+#X connect 18 2 3 0;
+#X connect 18 2 6 1;
