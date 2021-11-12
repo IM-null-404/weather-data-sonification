@@ -3,14 +3,14 @@
 
 <h1>How to use</h1>
 <ol>
-<li>Click on the start button in the 'Data-input' section  to run the sonification process, users may change the data reading speed through the 'read-speed' slider 
+  <li>Click on the start button in the <b>'Data-input'</b> section  to run the sonification process, users may change the data reading speed through the 'read-speed' slider 
   <p><img src = "screenshots/Data-input.jpg" alt="data-input" width = "300"></p></li>
   
-<li>Interact with the 'Sonic-output' section, by adjusting the oscillators, frequency and volumes for desirable sonic results
+  <li>Interact with the <b>'Sonic-output'</b> section, by adjusting the oscillators, frequency and volumes for desirable sonic results
   <p><img src = "screenshots/Sonic-output.jpg" alt="sonic-output" width = "300"></p></li>
  
 
-<li>Lastly, if users wish to output the sonification result, use the 'save-audio-2' section to specify the duration (in minutes) and file name, after that click on the start or stop button to start or end the recording process.
+  <li>Lastly, if users wish to output the sonification result, use the <b>'save-audio-2'</b> section to specify the duration (in minutes) and file name, after that click on the start or stop button to start or end the recording process.
   <p><img src = "screenshots/save-audio-2.jpg" alt="save-audio" width = "300"></p></li>
 
 </ol>
