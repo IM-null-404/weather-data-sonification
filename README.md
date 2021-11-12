@@ -1,5 +1,5 @@
 # About
-<p>This sonification system is a program built based on the distributions of [pure data environment](http://msp.ucsd.edu/software.html) by Miller Puckette, this program translates numerical weather data from csv file into sonic outputs.</p>
+<p>This sonification system is a program built based on the distributions of <a href = "http://msp.ucsd.edu/software.html"> pure data environment </a> by Miller Puckette, this program translates numerical weather data from csv file into sonic outputs.</p>
 
 # How to use
 <p>1. Click on the start button in the 'Data-input' section  to run the sonification process, users may change the data reading speed through the 'read-speed' slider</p>
